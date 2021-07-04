@@ -17,16 +17,17 @@ mdot["maps"]["plugins"]["trafficcast"]["TCLine"] = mdot["maps"]["plugins"]["traf
     this.number = options["number"]; //mainly for debugging currently
     this.color = this.getLineColor();
     
-    this.getInfoWindowContent = function ()
-    {
+     this.getInfoWindowContent = function () {
         return "<table><tr><td style='white-space:nowrap;'>Speed:</td><td style='white-space:nowrap;'><div style='background-color:"
             + this.color
             + ";width:20px; height:10px;'></div></td></tr><tr><td style='white-space:nowrap;'>Travel Time:</td><td style='white-space:nowrap;'>"
             + this.travelTime //+ "&nbsp;PairID=" + this.number + ";&nbsp;Index=" + this.index
             + "</td></tr><tr><td style='white-space:nowrap;'>Last&nbsp;Updated:</td><td style='white-space:nowrap;'>"
             + options["lastUpdated"]
-            + "</td></tr></table>"
-          //+ "<tr><td colspan='2' style='white-space:nowrap;text-align: center;font-size: x-small;font-style: italic;'>Last updated: " + options["lastUpdated"] + "</td></tr></table>";
+            + "</td></tr><tr><td style='white-space:nowrap;'>Direction:</td><td style='white-space:nowrap;'>"
+            + options["direction"] + "</td></tr>"
+            + "</table > "
+        //+ "<tr><td colspan='2' style='white-space:nowrap;text-align: center;font-size: x-small;font-style: italic;'>Last updated: " + options["lastUpdated"] + "</td></tr></table>";
     };
 
     //Doesn't matter what strokeColor options may have initially,

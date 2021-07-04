@@ -25,11 +25,11 @@ mdot["maps"]["plugins"]["trafficcast"]["TCLine"] = mdot["maps"]["plugins"]["traf
             + this.travelTime //+ "&nbsp;PairID=" + this.number + ";&nbsp;Index=" + this.index
             + "</td></tr><tr><td style='white-space:nowrap;'>Last&nbsp;Updated:</td><td style='white-space:nowrap;'>"
             + options["lastUpdated"]
-            + "</td></tr>
-			+<tr><td>direction:</td><td>"direction"</td></tr>
+            + "</td></tr>"
+	    + "<tr><td>direction:</td><td>direction</td></tr>"+
 			//+<tr><td>origin:</td><td>this.origin</td></tr>
 			//+<tr><td>destination:</td><td>this.destination</td></tr>
-			</table>"
+			"</table>"
           //+ "<tr><td colspan='2' style='white-space:nowrap;text-align: center;font-size: x-small;font-style: italic;'>Last updated: " + options["lastUpdated"] + "</td></tr></table>";
     };
 

@@ -1,0 +1,198 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link href="https://massgov.github.io/DOT/MassDOTTrafficmap/Stylesheets/default.css" media="all" type="text/css" rel="stylesheet" />
+	<link href="https://massgov.github.io/DOT/MassDOTTrafficmap/Stylesheets/skin.css" media="all" type="text/css" rel="stylesheet" />
+	<link href="https://massgov.github.io/DOT/MassDOTTrafficmap/Stylesheets/iFrame.css" media="all" type="text/css" rel="stylesheet" />
+	<link href="https://massgov.github.io/DOT/MassDOTTrafficmap/Stylesheets/portal.css" media="all" type="text/css" rel="stylesheet" />
+	<link href="https://massgov.github.io/DOT/MassDOTTrafficmap/Stylesheets/styles.css" media="all" type="text/css" rel="stylesheet" />
+	<meta charset="utf-8" />
+</head>
+<body>
+	<div id="dnn_ctr11457_View_dnnView">
+		<div id="dnn_ctr11457_View_outerDiv" style="display:inline-block !important" class="clearfix outerDiv">
+			<div id="dnn_ctr11457_View_mapKeyDiv" style="width: auto;" class="mapKey clearfix">
+				<div id="viewTrafficDiv" visible="true" style="margin-right: 30px; width: auto; float: left !important;">
+					<input id="viewTrafficCheckbox" checked="checked" type="checkbox" style="vertical-align: middle; margin: 0px !important;" />
+					<label for="viewTrafficCheckbox" style="vertical-align: middle;">
+						<strong>Real Time Traffic</strong>
+					</label>
+					<div style="margin-top: 5px; text-align: left;">
+						<div style="float: left; margin-right: 20px; margin-top: 5px;">
+							<label style="float: left;">
+								<img style="vertical-align: middle;" alt="Greater than 50 mph" src="https://massgov.github.io/DOT/MassDOTTrafficmap/Images/GreenColor.png" />&nbsp;&nbsp;&nbsp;50+&nbsp;mph
+							</label>
+							<br />
+							<label style="clear: left; float: left; margin-top: 5px;">
+								<img alt="Less than 30 mph" style="vertical-align: middle;" src="https://massgov.github.io/DOT/MassDOTTrafficmap/Images/RedColor.png" />&nbsp;&nbsp;&nbsp;&lt;30&nbsp;mph
+							</label>
+						</div>
+						<div style="float: left; margin-top: 5px; text-align: left;">
+							<label style="float: left;">
+								<img alt="Between 30 and 40 mph" style="vertical-align: middle;" src="https://massgov.github.io/DOT/MassDOTTrafficmap/Images/YellowColor.png" />&nbsp;&nbsp;&nbsp;30-40mph
+							</label>
+							<br />
+							<label style="clear: left; float: left; margin-top: 5px;">
+								<img alt="No Info" style="vertical-align: middle;" src="https://massgov.github.io/DOT/MassDOTTrafficmap/Images/GrayColor.jpg" />&nbsp;&nbsp;&nbsp;Unspecified
+							</label>
+						</div>
+					</div>
+				</div><div id="viewRoadIncidentDiv" style="margin-right: 30px; float: left !important;">
+					<label>
+						<strong>Road&nbsp;Work&nbsp;&amp;&nbsp;Incidents</strong>
+					</label>
+					<div style="margin: 5px 0px 0px; width: 140px;">
+						<div>
+							<div style="margin-bottom: 5px;">
+								<input id="viewPlannedEventsCheckbox" style="vertical-align: top; margin-left: 0px !important;" type="checkbox" />
+								<label style="width: 109px; vertical-align: middle;" for="viewPlannedEventsCheckbox">
+									<img alt="Road Work" style="vertical-align: middle;" src="https://massgov.github.io/DOT/MassDOTTrafficmap/Images/plannedEvent.png" />&nbsp;&nbsp;Road&nbsp;Work
+								</label>
+							</div>
+							<div style="width: 140px;">
+								<input id="viewCurrentEventsCheckbox" style="vertical-align: top; margin-left: 0px !important;" type="checkbox" />
+								<label style="width: 109px; vertical-align: middle;" for="viewCurrentEventsCheckbox">
+									<img alt="Incidents" style="vertical-align: middle;" src="https://massgov.github.io/DOT/MassDOTTrafficmap/Images/currentEvent.png" />&nbsp;&nbsp;Incidents
+								</label>
+							</div>
+						</div>
+					</div>
+				</div><div id="viewCameraDiv" style="margin-right: auto; float: left !important;">
+					<div>
+						<input id="viewCamerasCheckbox" checked="checked" type="checkbox" style="vertical-align: middle; margin: 0px !important;" />
+						<label for="viewCamerasCheckbox" style="vertical-align: middle;">
+							<img alt="Traffic Cameras" style="vertical-align: middle;" src="https://massgov.github.io/DOT/MassDOTTrafficmap/Images/camera_24x24.png" />&nbsp;<strong>Traffic Cameras</strong>
+						</label>
+					</div>
+					<div style="float: left; text-align: left;">
+						<select style="margin-top:20px; margin-bottom:0px; width:250px !important" id="camerasSelect">
+							<option>SELECT CAMERA</option>
+						</select>&nbsp;&nbsp;<input id="camButton" type="button" class="dnnPrimaryAction" value="View" />
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--<div id="map" style="width:100%;height:600px;"></div>-->
+		<script src="https://massgov.github.io/DOT/MassDOTTrafficmap/js/jquery.min.js"></script>
+		<script src="https://massgov.github.io/DOT/MassDOTTrafficmap/js/MassDOTMap.js"></script>
+		<script src="https://massgov.github.io/DOT/MassDOTTrafficmap/js/markerclusterer.js"></script>
+		<script src="https://massgov.github.io/DOT/MassDOTTrafficmap/js/trafficland.js"></script>
+		<script src="https://massgov.github.io/DOT/MassDOTTrafficmap/js/trafficcast_test.js"></script>
+		<script src="https://massgov.github.io/DOT/MassDOTTrafficmap/js/ers.js"></script>
+		<div id="dnn_ctr11457_View_map" class="map">
+			<div id="dnn_ctr11457_View_mapCanvas" class="gmap map_canvas">
+				<input type="hidden" name="dnn$ctr11457$View$mapID" id="dnn_ctr11457_View_mapID" value="12968" />
+				Please enable Javascript to view this map.
+			</div>
+		</div>
+	</div>
+	<script id="mapinit" type="text/javascript">
+		var TrafficCastData;
+		var TrafficLanddata;
+		var ERSdata;
+		$.ajax({
+		    url: 'https://dotfeeds.state.ma.us/api/TrafficCast?type=json',
+			type: "GET",
+			data: {},
+			dataType: "json",
+			async: false,
+			success: function (data) {
+				TrafficCastData = data;
+				//alert(JSON.stringify(data));
+				//$(".result").html(data);
+			},
+			error: function (err) {
+				alert(err.statusText);
+			}
+		});
+		$.ajax({
+		    url: 'https://dotfeeds.state.ma.us/api/ERS?type=json',
+			type: "GET",
+			data: {},
+			dataType: "json",
+			async: false,
+			success: function (data) {
+				ERSdata = data;
+				//alert(JSON.stringify(data));
+				//$(".result").html(data);
+			},
+			error: function (err) {
+				alert(err.statusText);
+			}
+		});
+		$.ajax({
+		    url: 'https://dotfeeds.state.ma.us/api/trafficland1?type=json',
+			type: "GET",
+			data: {},
+			dataType: "json",
+			async: false,
+			success: function (data) {
+				TrafficLanddata = data;
+				//alert(JSON.stringify(data));
+				//$(".result").html(data);
+			},
+			error: function (err) {
+				alert(err.statusText);
+			}
+		});
+		//alert(jsondata);
+		window.mdot["mapImagesURL"] = "";
+		window.mdot["maps"]["map12968"] = {};
+		window.mdot["maps"]["map12968"]["options"] = {
+			"height": 510,
+			"latitude": 42.42419226039928,
+			"longitude": -72,
+			"zoom": 8, "minZoom": 7,
+			"maxZoom": 12,
+			"mapTypeId": "ROADMAP",
+			"styles": null,
+			"dataLastCached": null,
+			"data": null,
+			"imagesFolder": "",
+			"scriptsFolder": "",
+			"IsDebug": false
+		};
+		window.mdot["maps"]["map12968"]["initPlugins"] = function (map) {
+			mdot["maps"]["plugins"]["trafficcast"].applyToMap(map, {
+				"checkBox": document.getElementById("viewTrafficCheckbox"),
+				"dataLastCached": new Date(1529337909777), "data": TrafficCastData,
+				"imagesFolder": "",
+				"scriptsFolder": "",
+				"IsDebug": false
+			});
+			mdot["maps"]["plugins"]["trafficland"].applyToMap(map, {
+				"minRefreshRate": 2000,
+				"checkBox": document.getElementById("viewCamerasCheckbox"),
+				"selectBox": document.getElementById("camerasSelect"),
+				"button": document.getElementById("camButton"),
+				"cameraClusterIcon": "Images/CameraCluster.png",
+				"cameraActiveIcon": "Images/camera_24x24.png",
+				"cameraDisabledIcon": "Images/camera_24x24.png",
+				"dataLastCached": new Date(1519886481436), "data": {
+					"tlCamerasJSON": TrafficLanddata
+				}, "imagesFolder": "", "scriptsFolder": "", "IsDebug": false
+			});
+			mdot["maps"]["plugins"]["ers"].applyToMap(map, {
+				"plannedCheckbox": document.getElementById("viewPlannedEventsCheckbox"),
+				"currentCheckbox": document.getElementById("viewCurrentEventsCheckbox"),
+				"currentImage": "Images/currentEvent.png",
+				"plannedImage": "Images/plannedEvent.png",
+				"dataLastCached": new Date(1521568580774), "data":
+				ERSdata,
+				"imagesFolder": "",
+				"scriptsFolder": "",
+				"IsDebug": false
+			});
+		};
+	</script>
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.31&key=AIzaSyAYDK0c6LuPcVZsZ3T4XrMH5CYIbkMMCag&callback=buildMaps">
+	</script>
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<div class="result"></div>
+</body>
+</html>

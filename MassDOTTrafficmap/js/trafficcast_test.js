@@ -18,7 +18,7 @@ mdot["maps"]["plugins"]["trafficcast"]["TCLine"] = mdot["maps"]["plugins"]["traf
     this.color = this.getLineColor();
     
      this.getInfoWindowContent = function () {
-        return "<table><tr><td style='white-space:nowrap;'>Speed:</td><td style='white-space:nowrap;'><div style='background-color:"
+        return "<table><tr><td style='white-space:nowrap;'>Speeddddd:</td><td style='white-space:nowrap;'><div style='background-color:"
             + this.color
             + ";width:20px; height:10px;'></div></td></tr><tr><td style='white-space:nowrap;'>Travel Time:</td><td style='white-space:nowrap;'>"
             + this.travelTime //+ "&nbsp;PairID=" + this.number + ";&nbsp;Index=" + this.index

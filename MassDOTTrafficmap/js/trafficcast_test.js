@@ -30,8 +30,9 @@ mdot["maps"]["plugins"]["trafficcast"]["TCLine"] = mdot["maps"]["plugins"]["traf
             + options["origin"]
             + "</td></tr><tr><td style='white-space:nowrap;'>Destination:</td><td style='white-space:nowrap;'>"
             + options["destination"]
-            + "</td></tr><tr><td style='white-space:nowrap;'>Title:</td><td style='white-space:nowrap;'>"
-            + options["Title"] + "</td></tr>"
+            //+ "</td></tr><tr><td style='white-space:nowrap;'>Title:</td><td style='white-space:nowrap;'>"
+            //+ options["Title"] + "</td></tr>"
+            + "</td></tr>"
             + "</table > "
         //+ "<tr><td colspan='2' style='white-space:nowrap;text-align: center;font-size: x-small;font-style: italic;'>Last updated: " + options["lastUpdated"] + "</td></tr></table>";
     };
